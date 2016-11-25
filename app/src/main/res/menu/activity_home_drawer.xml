@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_action_name"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_pchart"
+            android:icon="@drawable/ic_action_pchart"
+            android:title="Periodic Chart" />
+        <item
+            android:id="@+id/nav_book"
+            android:icon="@drawable/ic_action_book"
+            android:title="Book Service" />
+        <item
+            android:id="@+id/nav_details"
+            android:icon="@drawable/ic_action_detail"
+            android:title="Service Details" />
+    </group>
+    <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/nav_help"
+                android:icon="@drawable/ic_action_help"
+                android:title="Help" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_action_about"
+                android:title="About Us" />
+        <item
+            android:id="@+id/nav_signout"
+            android:icon="@drawable/ic_action_signout"
+            android:title="Log Out" />
+    </group>
+</menu>

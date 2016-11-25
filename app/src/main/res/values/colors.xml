@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#795548</color>
+    <color name="colorPrimaryDark">#5d4037</color>
+    <color name="colorAccent">#d7ccc8</color>
+    <color name="loginTextView">#c8a1887f</color>
+    <color name="loginButton">#dc795548</color>
+    <color name="loginText">#00a1887f</color>
+    <color name="textColor">#e1ff8f00</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="home_text">#96000000</color>
+</resources>
