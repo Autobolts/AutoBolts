@@ -1,10 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<RelativeLayout
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingTop="50dp">
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:background="@color/loginButton"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:fontFamily="monospace"
+        android:id="@+id/btnGo"
+        android:text="Find"
+        android:layout_below="@+id/txtLoc"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="geoLocate"/>
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/mapFragment" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:textColorLink="@android:color/white"
+        android:background="@color/loginTextView"
+        android:textColorHint="@color/colorAccent"
+        android:id="@+id/txtLoc"
+        android:textSize="14sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="false"
+        android:textColor="@android:color/white"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="11dp"
+        android:hint="Where are you now?"
+        android:layout_marginLeft="8dp" />
+
 
 </RelativeLayout>
-</LinearLayout>
