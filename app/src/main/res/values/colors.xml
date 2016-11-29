@@ -10,4 +10,6 @@
 
     <color name="black_overlay">#66000000</color>
     <color name="home_text">#96000000</color>
+    <color name="Background">#efebe9</color>
+    <color name="buttons">#dc8d6e63</color>
 </resources>

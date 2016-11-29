@@ -20,9 +20,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -34,15 +37,19 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.zip.Inflater;
 
 public class BookActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback {
 
     GoogleMap mGoogleMap;
+    Marker marker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +69,7 @@ public class BookActivity extends AppCompatActivity
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
             initMap();
+
         } else {
             setContentView(R.layout.activity_home);
         }
@@ -170,7 +178,6 @@ public class BookActivity extends AppCompatActivity
 
                 if (permissionsList.size() > 0) {
                     if (permissionsNeeded.size() > 0) {
-                        // Need Rationale
                         String message = "You need to grant access to " + permissionsNeeded.get(0);
                         for (int i = 1; i < permissionsNeeded.size(); i++)
                             message = message + " and " + permissionsNeeded.get(i);
@@ -190,6 +197,15 @@ public class BookActivity extends AppCompatActivity
             }
         }
         mGoogleMap.setMyLocationEnabled(true);
+        mGoogleMap.setOnMyLocationButtonClickListener(new GoogleMap.OnMyLocationButtonClickListener() {
+            @Override
+            public boolean onMyLocationButtonClick()
+            {
+                Button btnService = (Button)findViewById(R.id.btnLocate);
+                btnService.setVisibility(View.VISIBLE);
+                return false;
+            }
+        });
     }
 
     private boolean addPermission(List<String> permissionsList, String permission) {
@@ -217,17 +233,49 @@ public class BookActivity extends AppCompatActivity
         mGoogleMap.moveCamera(update);
     }
 
-    public void geoLocate(View view) throws IOException
+    public void geoLocate(View view)
     {
         EditText txtLoc = (EditText)findViewById(R.id.txtLoc);
         String location = txtLoc.getText().toString();
 
-        Geocoder gc = new Geocoder(this);
-        List<android.location.Address> list = gc.getFromLocationName(location,1);
-        android.location.Address address = list.get(0);
+        try{
+            Geocoder gc = new Geocoder(this);
+            List<android.location.Address> list = gc.getFromLocationName(location, 1);
+            android.location.Address address = list.get(0);
 
-        double lat = address.getLatitude();
-        double lng = address.getLongitude();
-        goToLocationZoom(lat,lng,8.0f);
+            double lat = address.getLatitude();
+            double lng = address.getLongitude();
+            goToLocationZoom(lat, lng, 14.0f);
+            Button btnService = (Button)findViewById(R.id.btnLocate);
+            btnService.setVisibility(View.VISIBLE);
+        }
+        catch (Exception ex) {
+            Toast.makeText(this, "Enter a region", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void serviceLocate(View view)
+    {
+        CameraUpdate update = CameraUpdateFactory.zoomBy(-3.0f);
+        mGoogleMap.moveCamera(update);
+        if (marker != null) {
+            marker.remove();
+        }
+
+        MarkerOptions markerOptions = new MarkerOptions()
+                .title("Bajaj RE Service Centre")
+                .position(new LatLng(11.2838987, 75.7690573));
+        marker = mGoogleMap.addMarker(markerOptions);
+
+        String[] values = new String[] {markerOptions.getTitle().toString()};
+        ListView listView = (ListView)findViewById(R.id.lstView);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, R.layout.list_black_text,R.id.list_content, values);
+        listView.setAdapter(arrayAdapter);
+    }
+
+    public void btnBookClick(View view)
+    {
+                Intent intent = new Intent(BookActivity.this,BookActivity2.class);
+                startActivity(intent);
     }
 }
