@@ -24,7 +24,6 @@
     <EditText
         android:layout_height="40dp"
         android:inputType="textPersonName"
-        android:text="Name"
         android:ems="10"
         android:layout_below="@+id/txtAddress"
         android:layout_alignStart="@+id/txtAddress"
