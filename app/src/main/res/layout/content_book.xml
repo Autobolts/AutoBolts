@@ -32,7 +32,7 @@
         android:layout_marginTop="11.5dp"
         android:hint="Where are you now?"
         android:layout_marginLeft="10dp"
-        android:layout_width="300dp" />
+        android:layout_width="280dp" />
 
     <Button
         android:layout_height="40dp"
@@ -47,7 +47,7 @@
         android:onClick="geoLocate"
         android:layout_below="@+id/txtLoc"
         android:layout_alignStart="@+id/txtLoc"
-        android:layout_width="145dp" />
+        android:layout_width="135dp" />
 
     <Button
         android:layout_height="40dp"
@@ -63,7 +63,7 @@
         android:layout_toEndOf="@+id/btnFind"
         android:layout_marginStart="10dp"
         android:visibility="invisible"
-        android:layout_width="145dp" />
+        android:layout_width="135dp" />
 
         <ListView
             android:layout_width="match_parent"

@@ -113,16 +113,16 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Userdetails" >
+        <activity android:name=".UserDetails" >
             <intent-filter>
-                <action android:name="com.android.nielit.Userdetails" />
+                <action android:name="com.android.nielit.UserDetails" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".Vehicledetails">
+        <activity android:name=".VehicleDetails">
             <intent-filter>
-                <action android:name="com.android.nielit.Vehicledetails" />
+                <action android:name="com.android.nielit.VehicleDetails" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

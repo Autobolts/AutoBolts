@@ -4,26 +4,15 @@
     android:id="@+id/activity_vehicledetails"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.android.nielit.autobolts.Vehicledetails"
-    android:background="@drawable/loginimage">
+    tools:context="com.android.nielit.autobolts.VehicleDetails"
+    android:background="@drawable/registerimage">
 
-    <Spinner
-        android:layout_height="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="160dp"
-        android:id="@+id/spnBrand"
-        android:layout_width="280dp"
-        android:padding="10dp"
-        android:background="@color/loginTextView"
-        android:backgroundTint="@color/loginTextView" />
+    <include
+        layout="@layout/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <TextView
-        android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_below="@+id/spnMake"
         android:layout_alignStart="@+id/spnMake"
@@ -31,54 +20,70 @@
         android:id="@+id/txtPurchaseDate"
         android:padding="10dp"
         android:background="@color/loginTextView"
-        android:backgroundTint="@color/loginTextView"
-        android:hint="Purchase Date" />
+        android:hint="Purchase Date"
+        android:layout_width="280dp"
+        android:fontFamily="monospace" />
 
     <Spinner
         android:layout_height="40dp"
         android:id="@+id/spnMake"
         android:layout_width="280dp"
         android:background="@color/loginTextView"
-        android:backgroundTint="@color/loginTextView"
         android:padding="10dp"
         android:layout_marginTop="25dp"
         android:layout_below="@+id/spnBrand"
         android:layout_alignStart="@+id/spnBrand" />
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="280dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/txtPurchaseDate"
-        android:layout_alignStart="@+id/txtPurchaseDate"
-        android:layout_marginTop="25dp"
-        android:id="@+id/txtServiceDate"
-        android:padding="10dp"
-        android:background="@color/loginTextView"
-        android:backgroundTint="@color/loginTextView"
-        android:hint="Service Date" />
-
     <EditText
         android:layout_width="280dp"
         android:layout_height="40dp"
-        android:inputType="number"
+        android:inputType="date"
         android:ems="10"
-        android:layout_below="@+id/txtServiceDate"
-        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/txtLastSrvc"
+        android:layout_alignStart="@+id/txtLastSrvc"
         android:layout_marginTop="25dp"
-        android:id="@+id/txtOdometer"
-        android:padding="10dp"
+        android:id="@+id/txtOdo"
         android:background="@color/loginTextView"
-        android:backgroundTint="@color/loginTextView"
-        android:hint="Odometer Reading"
-        android:textSize="14sp" />
+        android:hint="Odo Reading"
+        android:textSize="14sp"
+        android:fontFamily="monospace"
+        android:padding="10dp" />
 
     <Button
-        android:text="Register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/btnRegister" />
+        android:text="Enter"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:id="@+id/btnEnter"
+        android:background="@color/loginButton"
+        android:layout_marginTop="40dp"
+        android:fontFamily="monospace"
+        android:textAllCaps="false"
+        android:layout_below="@+id/txtOdo"
+        android:layout_centerHorizontal="true" />
+
+    <Spinner
+        android:layout_height="40dp"
+        android:layout_marginTop="122dp"
+        android:id="@+id/spnBrand"
+        android:layout_width="280dp"
+        android:background="@color/loginTextView"
+        android:padding="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_height="40dp"
+        android:inputType="date"
+        android:ems="10"
+        android:layout_marginTop="25dp"
+        android:id="@+id/txtLastSrvc"
+        android:layout_below="@+id/txtPurchaseDate"
+        android:layout_alignStart="@+id/txtPurchaseDate"
+        android:layout_width="280dp"
+        android:background="@color/loginTextView"
+        android:hint="Date of last service"
+        android:fontFamily="monospace"
+        android:textSize="14sp"
+        android:padding="10dp" />
 
 </RelativeLayout>

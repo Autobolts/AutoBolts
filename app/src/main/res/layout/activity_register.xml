@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.android.nielit.autobolts.RegisterActivity"
-    android:background="@drawable/loginimage">
+    android:background="@drawable/registerimage">
 
     <include
         layout="@layout/app_bar"
@@ -25,22 +25,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <EditText
-        android:layout_width="280dp"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_marginTop="160dp"
-        android:id="@+id/txtFirstname"
-        android:hint="First Name"
-        android:layout_height="40dp"
-        android:background="@color/loginTextView"
-        android:padding="10dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="monospace"
-        android:textSize="14sp"
-        android:backgroundTint="@color/loginTextView" />
-
         <EditText
         android:layout_width="280dp"
         android:layout_height="40dp"
@@ -53,15 +37,14 @@
         android:padding="10dp"
         android:textSize="14sp"
         android:layout_below="@+id/txtFirstname"
-        android:layout_centerHorizontal="true"
-            android:backgroundTint="@color/loginTextView" />
+        android:layout_centerHorizontal="true" />
 
         <EditText
         android:layout_height="40dp"
         android:inputType="textEmailAddress"
         android:ems="10"
         android:layout_marginTop="25dp"
-        android:id="@+id/txtEmail"
+        android:id="@+id/txtAddr"
         android:hint="Email ID"
         android:background="@color/loginTextView"
         android:padding="10dp"
@@ -69,8 +52,7 @@
         android:layout_alignStart="@+id/txtLastname"
         android:layout_width="280dp"
         android:fontFamily="monospace"
-        android:textSize="14sp"
-            android:backgroundTint="@color/loginTextView" />
+        android:textSize="14sp" />
 
     <EditText
         android:layout_width="280dp"
@@ -82,11 +64,10 @@
         android:hint="Password"
         android:background="@color/loginTextView"
         android:padding="10dp"
-        android:layout_below="@+id/txtEmail"
-        android:layout_alignStart="@+id/txtEmail"
+        android:layout_below="@+id/txtAddr"
+        android:layout_alignStart="@+id/txtAddr"
         android:textSize="14sp"
-        android:fontFamily="monospace"
-        android:backgroundTint="@color/loginTextView" />
+        android:fontFamily="monospace" />
 
     <EditText
         android:layout_width="280dp"
@@ -101,8 +82,7 @@
         android:layout_below="@+id/txtPassword"
         android:layout_alignStart="@+id/txtPassword"
         android:fontFamily="monospace"
-        android:textSize="14sp"
-        android:backgroundTint="@color/loginTextView" />
+        android:textSize="14sp" />
 
         <Button
             android:text="Sign Up"
@@ -111,9 +91,26 @@
             android:layout_below="@+id/txtConfirmPswd"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
-            android:id="@+id/button"
+            android:id="@+id/btnReg"
             android:background="@color/loginButton"
-            android:layout_marginBottom="50dp" />
+            android:layout_marginBottom="50dp"
+            android:fontFamily="monospace"
+            android:textAllCaps="false" />
+
+        <EditText
+            android:layout_width="280dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_marginTop="120dp"
+            android:id="@+id/txtFirstname"
+            android:hint="First Name"
+            android:layout_height="40dp"
+            android:background="@color/loginTextView"
+            android:padding="10dp"
+            android:fontFamily="monospace"
+            android:textSize="14sp"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/txtLastname" />
     </RelativeLayout>
     </ScrollView>
 </android.support.v4.widget.NestedScrollView>
