@@ -29,8 +29,8 @@
         android:layout_width="280dp"
         android:inputType="textPersonName"
         android:ems="10"
-        android:layout_marginTop="200dp"
-        android:id="@+id/editText2"
+        android:layout_marginTop="160dp"
+        android:id="@+id/txtFirstname"
         android:hint="First Name"
         android:layout_height="40dp"
         android:background="@color/loginTextView"
@@ -38,72 +38,77 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:fontFamily="monospace"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:backgroundTint="@color/loginTextView" />
 
         <EditText
         android:layout_width="280dp"
         android:layout_height="40dp"
         android:inputType="textPersonName"
         android:ems="10"
-        android:layout_marginTop="42dp"
-        android:id="@+id/editText4"
+        android:layout_marginTop="25dp"
+        android:id="@+id/txtLastname"
         android:hint="Last Name"
         android:background="@color/loginTextView"
         android:padding="10dp"
         android:textSize="14sp"
-        android:layout_below="@+id/editText2"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/txtFirstname"
+        android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/loginTextView" />
 
         <EditText
         android:layout_height="40dp"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         android:ems="10"
-        android:layout_marginTop="40dp"
-        android:id="@+id/editText3"
-        android:hint="Last Name"
+        android:layout_marginTop="25dp"
+        android:id="@+id/txtEmail"
+        android:hint="Email ID"
         android:background="@color/loginTextView"
         android:padding="10dp"
-        android:layout_below="@+id/editText4"
-        android:layout_alignStart="@+id/editText4"
+        android:layout_below="@+id/txtLastname"
+        android:layout_alignStart="@+id/txtLastname"
         android:layout_width="280dp"
         android:fontFamily="monospace"
-        android:textSize="14sp" />
-
-    <EditText
-        android:layout_width="280dp"
-        android:layout_height="40dp"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_marginTop="40dp"
-        android:id="@+id/editText5"
-        android:hint="Last Name"
-        android:background="@color/loginTextView"
-        android:padding="10dp"
-        android:layout_below="@+id/editText3"
-        android:layout_alignStart="@+id/editText3"
         android:textSize="14sp"
-        android:fontFamily="monospace" />
+            android:backgroundTint="@color/loginTextView" />
 
     <EditText
         android:layout_width="280dp"
         android:layout_height="40dp"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:ems="10"
-        android:layout_marginTop="40dp"
-        android:id="@+id/editText6"
-        android:hint="Last Name"
+        android:layout_marginTop="25dp"
+        android:id="@+id/txtPassword"
+        android:hint="Password"
         android:background="@color/loginTextView"
         android:padding="10dp"
-        android:layout_below="@+id/editText5"
-        android:layout_alignStart="@+id/editText5"
+        android:layout_below="@+id/txtEmail"
+        android:layout_alignStart="@+id/txtEmail"
+        android:textSize="14sp"
         android:fontFamily="monospace"
-        android:textSize="14sp" />
+        android:backgroundTint="@color/loginTextView" />
+
+    <EditText
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_marginTop="25dp"
+        android:id="@+id/txtConfirmPswd"
+        android:hint="Confirm Password"
+        android:background="@color/loginTextView"
+        android:padding="10dp"
+        android:layout_below="@+id/txtPassword"
+        android:layout_alignStart="@+id/txtPassword"
+        android:fontFamily="monospace"
+        android:textSize="14sp"
+        android:backgroundTint="@color/loginTextView" />
 
         <Button
             android:text="Sign Up"
             android:layout_width="200dp"
             android:layout_height="40dp"
-            android:layout_below="@+id/editText6"
+            android:layout_below="@+id/txtConfirmPswd"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             android:id="@+id/button"
