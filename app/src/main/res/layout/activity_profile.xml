@@ -4,10 +4,233 @@
     android:id="@+id/activity_profile"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.android.nielit.autobolts.ProfileActivity">
+    tools:context="com.android.nielit.autobolts.ProfileActivity"
+    android:background="@color/Background">
 
     <include
         layout="@layout/app_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_height="40dp"
+                android:inputType="textPostalAddress"
+                android:ems="10"
+                android:id="@+id/txtProfileDistrict"
+                android:padding="10dp"
+                android:textSize="14sp"
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/txtProfileAddr"
+                android:layout_alignStart="@+id/txtProfileAddr"
+                android:background="@color/loginTextView"
+                android:layout_width="150dp" />
+
+            <EditText
+                android:layout_height="40dp"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:layout_below="@+id/txtProfileDistrict"
+                android:layout_alignStart="@+id/txtProfileAddr"
+                android:id="@+id/txtProfileCity"
+                android:padding="10dp"
+                android:layout_marginTop="25dp"
+                android:textSize="14sp"
+                android:background="@color/loginTextView"
+                android:layout_width="150dp" />
+
+            <EditText
+                android:layout_height="40dp"
+                android:inputType="number"
+                android:ems="10"
+                android:layout_below="@+id/txtProfileCity"
+                android:layout_alignStart="@+id/txtProfileAddr"
+                android:layout_marginTop="25dp"
+                android:id="@+id/txtProfilePin"
+                android:padding="10dp"
+                android:textSize="14sp"
+                android:background="@color/loginTextView"
+                android:layout_width="150dp" />
+
+            <EditText
+                android:layout_height="40dp"
+                android:inputType="phone"
+                android:ems="10"
+                android:layout_below="@+id/txtProfilePin"
+                android:layout_alignStart="@+id/txtProfileAddr"
+                android:layout_marginTop="25dp"
+                android:id="@+id/txtProfilePhone"
+                android:padding="10dp"
+                android:background="@color/loginTextView"
+                android:textSize="14sp"
+                android:layout_width="150dp" />
+
+            <EditText
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/txtProfileVehicleMake"
+                android:layout_height="40dp"
+                android:background="@color/loginTextView"
+                android:padding="10dp"
+                android:fontFamily="monospace"
+                android:textSize="14sp"
+                android:layout_below="@id/txtProfilePhone"
+                android:layout_alignStart="@+id/txtProfileLastName"
+                android:layout_marginTop="25dp"
+                android:layout_width="150dp" />
+
+            <EditText
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/txtProfileFirstName"
+                android:layout_height="40dp"
+                android:background="@color/loginTextView"
+                android:padding="10dp"
+                android:fontFamily="monospace"
+                android:textSize="14sp"
+                android:layout_marginTop="100dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/txtProfileLastName"
+                android:layout_width="150dp" />
+
+            <EditText
+                android:layout_height="40dp"
+                android:id="@+id/txtProfileAddr"
+                android:padding="10dp"
+                android:background="@color/loginTextView"
+                android:textColor="@color/loginText"
+                android:fontFamily="monospace"
+                android:textSize="14sp"
+                android:layout_marginTop="25dp"
+                android:layout_width="150dp"
+                android:layout_below="@+id/txtProfileLastName"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="40dp"
+                />
+
+            <EditText
+                android:layout_height="40dp"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/txtProfileLastName"
+                android:background="@color/loginTextView"
+                android:padding="10dp"
+                android:textSize="14sp"
+                android:layout_marginTop="25dp"
+                android:layout_width="150dp"
+                android:layout_below="@+id/txtProfileFirstName"
+                android:layout_alignStart="@+id/txtProfileAddr"
+                />
+
+            <TextView
+                android:text="District"
+                android:layout_height="40dp"
+                android:id="@+id/lblProfDistrict"
+                android:layout_width="150dp"
+                android:layout_alignBaseline="@+id/txtProfileDistrict"
+                android:layout_alignBottom="@+id/txtProfileDistrict"
+                android:layout_alignStart="@+id/lblProfLastName"
+                android:padding="10dp"
+                android:fontFamily="monospace"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:text="Phone Number"
+                android:layout_height="40dp"
+                android:id="@+id/lblProfPhone"
+                android:layout_width="150dp"
+                android:layout_alignTop="@+id/txtProfilePhone"
+                android:layout_alignStart="@+id/lblProfLastName"
+                android:padding="10dp"
+                android:fontFamily="monospace"
+                android:textColor="@color/colorPrimaryDark"
+                />
+
+            <TextView
+                android:text="PinCode"
+                android:layout_height="40dp"
+                android:id="@+id/lblProfPin"
+                android:layout_width="150dp"
+                android:layout_alignTop="@+id/txtProfilePin"
+                android:layout_alignStart="@+id/lblProfLastName"
+                android:padding="10dp"
+                android:fontFamily="monospace"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:text="City"
+                android:layout_height="40dp"
+                android:id="@+id/lblProfCity"
+                android:layout_width="150dp"
+                android:layout_alignTop="@+id/txtProfileCity"
+                android:layout_alignParentStart="true"
+                android:padding="10dp"
+                android:fontFamily="monospace"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:text="Address"
+                android:layout_height="40dp"
+                android:id="@+id/lblProfAddr"
+                android:layout_width="150dp"
+                android:layout_alignTop="@+id/txtProfileAddr"
+                android:layout_alignStart="@+id/lblProfLastName"
+                android:padding="10dp"
+                android:fontFamily="monospace"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:text="Last Name"
+                android:layout_height="40dp"
+                android:id="@+id/lblProfLastName"
+                android:layout_width="150dp"
+                android:layout_alignTop="@+id/txtProfileLastName"
+                android:layout_alignParentStart="true"
+                android:padding="10dp"
+                android:fontFamily="monospace"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:text="First Name"
+                android:layout_height="40dp"
+                android:id="@+id/lblProfFirstName"
+                android:layout_width="150dp"
+                android:layout_alignTop="@+id/txtProfileFirstName"
+                android:layout_alignParentStart="true"
+                android:padding="10dp"
+                android:fontFamily="monospace"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <Button
+                android:text="Edit"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:id="@+id/btnProfileEdit"
+                android:background="@color/loginButton"
+                android:layout_below="@id/txtProfileVehicleMake"
+                android:fontFamily="monospace"
+                android:textAllCaps="false"
+                android:layout_marginTop="25dp"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:text="Vehicle"
+                android:layout_height="40dp"
+                android:id="@+id/lblProfVehicle"
+                android:layout_width="150dp"
+                android:padding="10dp"
+                android:fontFamily="monospace"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_above="@+id/btnProfileEdit"
+                android:layout_alignParentStart="true" />
+        </RelativeLayout>
+    </ScrollView>
+
 </RelativeLayout>

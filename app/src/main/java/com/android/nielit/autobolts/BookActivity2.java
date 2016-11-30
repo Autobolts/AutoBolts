@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.util.GregorianCalendar;
@@ -23,6 +24,7 @@ public class BookActivity2 extends AppCompatActivity{
 
     java.util.Calendar calendar = java.util.Calendar.getInstance();
     Button btnDate;
+    Button btnBook;
     TextView txtDate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,9 @@ public class BookActivity2 extends AppCompatActivity{
         setSupportActionBar(toolbar);
         btnDate = (Button) findViewById(R.id.btnDatePick);
         txtDate = (TextView)findViewById(R.id.txtDate);
+        btnBook = (Button)findViewById(R.id.btnBook);
         btnDateOnClick();
+        btnBookOnClick();
     }
 
     public void btnDateOnClick()
@@ -41,6 +45,16 @@ public class BookActivity2 extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 new DatePickerDialog(BookActivity2.this,listener,calendar.get(java.util.Calendar.YEAR),calendar.get(java.util.Calendar.MONTH),calendar.get(java.util.Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+    }
+
+    public void btnBookOnClick()
+    {
+        btnBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(BookActivity2.this,"Service Booked",Toast.LENGTH_LONG).show();
             }
         });
     }

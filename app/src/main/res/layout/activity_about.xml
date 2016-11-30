@@ -4,7 +4,8 @@
     android:id="@+id/activity_about"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.android.nielit.autobolts.AboutActivity">
+    tools:context="com.android.nielit.autobolts.AboutActivity"
+    android:background="@color/Background">
     <include
         layout="@layout/app_bar"
         android:layout_width="match_parent"

@@ -15,6 +15,20 @@
     <EditText
         android:layout_width="280dp"
         android:layout_height="40dp"
+        android:layout_marginTop="120dp"
+        android:id="@+id/txtAddr"
+        android:padding="10dp"
+        android:background="@color/loginTextView"
+        android:hint="Address"
+        android:textColor="@color/loginText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="monospace"
+        android:textSize="14sp" />
+
+    <EditText
+        android:layout_width="280dp"
+        android:layout_height="40dp"
         android:inputType="textPostalAddress"
         android:ems="10"
         android:id="@+id/txtDistrict"
@@ -66,20 +80,6 @@
         android:padding="10dp"
         android:background="@color/loginTextView"
         android:hint="Phone Number"
-        android:textSize="14sp" />
-
-    <EditText
-        android:layout_width="280dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="120dp"
-        android:id="@+id/txtAddr"
-        android:padding="10dp"
-        android:background="@color/loginTextView"
-        android:hint="Address"
-        android:textColor="@color/loginText"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="monospace"
         android:textSize="14sp" />
 
     <Button
