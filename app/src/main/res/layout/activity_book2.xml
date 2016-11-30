@@ -4,11 +4,49 @@
     android:id="@+id/activity_book2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.android.nielit.autobolts.BookActivity2">
+    tools:context="com.android.nielit.autobolts.BookActivity2"
+    android:background="@color/Background">
 
     <include
         layout="@layout/app_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <Button
+        android:text="Pick a Date"
+        android:layout_width="200dp"
+        android:id="@+id/btnDatePick"
+        android:layout_height="40dp"
+        android:background="@color/loginButton"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:fontFamily="monospace"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:layout_above="@+id/btnDatePick"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp"
+        android:id="@+id/txtDate"
+        android:background="@color/loginTextView"
+        android:padding="10dp" />
+
+    <Button
+        android:text="Book Service"
+        android:layout_width="200dp"
+        android:id="@+id/btnBook"
+        android:layout_height="40dp"
+        android:background="@color/loginButton"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:fontFamily="monospace"
+        android:layout_below="@+id/btnDatePick"
+        android:layout_alignStart="@+id/btnDatePick"
+        android:layout_marginTop="65dp" />
 </RelativeLayout>
