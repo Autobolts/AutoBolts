@@ -3,10 +3,12 @@ package com.android.nielit.autobolts;
 import android.*;
 import android.Manifest;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Geocoder;
+import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -50,6 +52,7 @@ public class BookActivity extends AppCompatActivity
 
     GoogleMap mGoogleMap;
     Marker marker;
+    LocationManager lm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +72,7 @@ public class BookActivity extends AppCompatActivity
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
             initMap();
+            lm = (LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
 
         } else {
             setContentView(R.layout.activity_home);
@@ -201,9 +205,27 @@ public class BookActivity extends AppCompatActivity
             @Override
             public boolean onMyLocationButtonClick()
             {
-                Button btnService = (Button)findViewById(R.id.btnLocate);
-                btnService.setVisibility(View.VISIBLE);
-                return false;
+                boolean gps_enabled = false;
+                boolean network_enabled = false;
+
+                try {
+                    gps_enabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
+                } catch(Exception ex) {}
+
+                try {
+                    network_enabled = lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+                } catch(Exception ex) {}
+
+                if(!gps_enabled && !network_enabled) {
+                    Toast.makeText(BookActivity.this,"Turn on Location/Internet",Toast.LENGTH_LONG).show();
+                    return true;
+                }
+                else
+                {
+                    Button btnService = (Button) findViewById(R.id.btnLocate);
+                    btnService.setVisibility(View.VISIBLE);
+                    return false;
+                }
             }
         });
     }
