@@ -31,12 +31,12 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:layout_marginTop="25dp"
-        android:id="@+id/txtLastname"
+        android:id="@+id/txtRegLastName"
         android:hint="Last Name"
         android:background="@color/loginTextView"
         android:padding="10dp"
         android:textSize="14sp"
-        android:layout_below="@+id/txtFirstname"
+        android:layout_below="@+id/txtRegFirstName"
         android:layout_centerHorizontal="true" />
 
         <EditText
@@ -44,12 +44,12 @@
         android:inputType="textEmailAddress"
         android:ems="10"
         android:layout_marginTop="25dp"
-        android:id="@+id/txtAddr"
+        android:id="@+id/txtRegEmail"
         android:hint="Email ID"
         android:background="@color/loginTextView"
         android:padding="10dp"
-        android:layout_below="@+id/txtLastname"
-        android:layout_alignStart="@+id/txtLastname"
+        android:layout_below="@+id/txtRegLastName"
+        android:layout_alignStart="@+id/txtRegLastName"
         android:layout_width="280dp"
         android:fontFamily="monospace"
         android:textSize="14sp" />
@@ -60,12 +60,12 @@
         android:inputType="textPassword"
         android:ems="10"
         android:layout_marginTop="25dp"
-        android:id="@+id/txtPassword"
+        android:id="@+id/txtRegPassword"
         android:hint="Password"
         android:background="@color/loginTextView"
         android:padding="10dp"
-        android:layout_below="@+id/txtAddr"
-        android:layout_alignStart="@+id/txtAddr"
+        android:layout_below="@+id/txtRegEmail"
+        android:layout_alignStart="@+id/txtRegEmail"
         android:textSize="14sp"
         android:fontFamily="monospace" />
 
@@ -79,8 +79,8 @@
         android:hint="Confirm Password"
         android:background="@color/loginTextView"
         android:padding="10dp"
-        android:layout_below="@+id/txtPassword"
-        android:layout_alignStart="@+id/txtPassword"
+        android:layout_below="@+id/txtRegPassword"
+        android:layout_alignStart="@+id/txtRegPassword"
         android:fontFamily="monospace"
         android:textSize="14sp" />
 
@@ -102,7 +102,7 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:layout_marginTop="120dp"
-            android:id="@+id/txtFirstname"
+            android:id="@+id/txtRegFirstName"
             android:hint="First Name"
             android:layout_height="40dp"
             android:background="@color/loginTextView"
@@ -110,7 +110,7 @@
             android:fontFamily="monospace"
             android:textSize="14sp"
             android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/txtLastname" />
+            android:layout_alignStart="@+id/txtRegLastName" />
     </RelativeLayout>
     </ScrollView>
 </android.support.v4.widget.NestedScrollView>
