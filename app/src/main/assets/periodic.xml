@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Vehicle>
+    <Bajaj>
+        <Pulsar-200ns>
+500km
+Change Engine Oil, Replace Oil Filter
+
+1000KM
+Topup Engine Oil
+
+5000KM
+Topop Engine Oil
+
+10000KM
+Change Engine Oil, Replace Oil Filter, Change Fork oil
+
+15000KM
+Topup Engine Oil, Replace Chain Sprocket Set, Replace Spark Plug
+
+20000KM
+Change Engine Oil, Replace Oil Filter, Replace Air Filter
+
+25000KM
+Topup Engine Oil
+
+30000KM
+Change Engine Oil, Replace Oil Filter
+        </Pulsar-200ns>
+    <Pulsar-220>
+
+    </Pulsar-220>
+    <V15>
+
+    </V15>
+    <Pulsar-rs200>
+
+    </Pulsar-rs200>
+    </Bajaj>
+    <Maruti>
+
+<Ritz>
+
+</Ritz>
+<Baleno>
+
+</Baleno>
+    </Maruti>
+
+</Vehicle>

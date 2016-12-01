@@ -11,10 +11,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
+
+import org.xmlpull.v1.XmlPullParser;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PeriodicActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +41,19 @@ public class PeriodicActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        listView = (ListView)findViewById(R.id.lstViewPeriodic);
+        List<MDetails> mDetailsList;
+        try{
+            PeriodicPullParser parser = new PeriodicPullParser();
+            mDetailsList = parser.parse(getAssets().open("periodic.xml"));
+            ArrayAdapter<MDetails> adapter = new ArrayAdapter<>(this,R.layout.list_periodic, R.id.txt_content, mDetailsList);
+            listView.setAdapter(adapter);
+
+        }catch(IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     @Override
