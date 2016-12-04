@@ -40,7 +40,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_register);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        btnReg = (Button) findViewById(R.id.btnReg);
+        btnReg = (Button)findViewById(R.id.btnReg);
         editTextEmail = (EditText) findViewById(R.id.txtRegEmail);
         editTextPassword = (EditText) findViewById(R.id.txtRegPassword);
         editTextFname = (EditText) findViewById(R.id.txtRegFirstName);
@@ -82,20 +82,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         requestQueue.add(stringRequest);
     }
 
-    public void btnRegOnClick() {
-        btnReg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), UserDetails.class);
-                startActivity(intent);
-            }
-        });
-    }
-
     @Override
     public void onClick(View v) {
         if (v == btnReg) {
             registerUser();
+            Intent intent = new Intent(getApplicationContext(), UserDetails.class);
+            intent.putExtra("email",editTextEmail.getText().toString().trim());
+            startActivity(intent);
         }
     }
 }

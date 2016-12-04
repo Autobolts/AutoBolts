@@ -13,39 +13,11 @@
         android:layout_height="match_parent" />
 
     <EditText
-        android:layout_width="280dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="120dp"
-        android:id="@+id/txtRegEmail"
-        android:padding="10dp"
-        android:background="@color/loginTextView"
-        android:hint="Address"
-        android:textColor="@color/loginText"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="monospace"
-        android:textSize="14sp" />
-
-    <EditText
-        android:layout_width="280dp"
-        android:layout_height="40dp"
-        android:inputType="textPostalAddress"
-        android:ems="10"
-        android:id="@+id/txtDistrict"
-        android:padding="10dp"
-        android:hint="District"
-        android:textSize="14sp"
-        android:layout_marginTop="25dp"
-        android:layout_below="@+id/txtRegEmail"
-        android:layout_alignStart="@+id/txtRegEmail"
-        android:background="@color/loginTextView" />
-
-    <EditText
         android:layout_height="40dp"
         android:inputType="textPersonName"
         android:ems="10"
-        android:layout_below="@+id/txtDistrict"
-        android:layout_alignStart="@+id/txtDistrict"
+        android:layout_below="@+id/txtAddr"
+        android:layout_alignStart="@+id/txtAddr"
         android:id="@+id/txtCity"
         android:layout_width="280dp"
         android:padding="10dp"
@@ -57,9 +29,22 @@
     <EditText
         android:layout_width="280dp"
         android:layout_height="40dp"
+        android:id="@+id/txtState"
+        android:layout_below="@+id/txtCity"
+        android:layout_alignStart="@+id/txtCity"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:padding="10dp"
+        android:hint="State"
+        android:textSize="14sp"
+        android:background="@color/loginTextView" />
+
+    <EditText
+        android:layout_width="280dp"
+        android:layout_height="40dp"
         android:inputType="number"
         android:ems="10"
-        android:layout_below="@+id/txtCity"
+        android:layout_below="@+id/txtState"
         android:layout_alignStart="@+id/txtCity"
         android:layout_marginTop="25dp"
         android:id="@+id/txtPin"
@@ -94,5 +79,19 @@
         android:layout_marginBottom="50dp"
         android:fontFamily="monospace"
         android:textAllCaps="false" />
+
+    <EditText
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:id="@+id/txtAddr"
+        android:padding="10dp"
+        android:hint="Address"
+        android:textSize="14sp"
+        android:layout_marginTop="145dp"
+        android:background="@color/loginTextView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

@@ -8,28 +8,35 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import org.xmlpull.v1.XmlPullParser;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class PeriodicActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private ListView listView;
+    SessionManagement sessionManagement;
+    TextView txtEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_periodic);
+        txtEmail = (TextView)findViewById(R.id.txtLoginEmail);
+        //sessionManagement = new SessionManagement(getApplicationContext());
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -41,6 +48,11 @@ public class PeriodicActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //sessionManagement.checkLogin();
+        //HashMap<String, String> user = sessionManagement.getUserDetails();
+        //String email = user.get(SessionManagement.KEY_EMAIL);
+        //txtEmail.setText(Html.fromHtml(email));
 
         listView = (ListView)findViewById(R.id.lstViewPeriodic);
         List<MDetails> mDetailsList;
@@ -114,7 +126,9 @@ public class PeriodicActivity extends AppCompatActivity
             Intent intent = new Intent(getApplicationContext(),AboutActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_signout) {
-
+            //sessionManagement.logoutUser();
+            Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.periodic_layout);

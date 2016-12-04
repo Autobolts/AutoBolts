@@ -8,18 +8,27 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.HashMap;
 
 public class DetailsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    SessionManagement sessionManagement;
+    TextView txtEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+        txtEmail = (TextView)findViewById(R.id.txtLoginEmail);
+        //sessionManagement = new SessionManagement(getApplicationContext());
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -31,6 +40,10 @@ public class DetailsActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        //sessionManagement.checkLogin();
+        //HashMap<String, String> user = sessionManagement.getUserDetails();
+        //String email = user.get(SessionManagement.KEY_EMAIL);
+        //txtEmail.setText(Html.fromHtml(email));
     }
 
     @Override
@@ -91,7 +104,9 @@ public class DetailsActivity extends AppCompatActivity
             Intent intent = new Intent(getApplicationContext(),AboutActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_signout) {
-
+            //sessionManagement.logoutUser();
+            Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.details_layout);

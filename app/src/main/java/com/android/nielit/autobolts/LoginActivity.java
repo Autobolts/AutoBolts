@@ -30,11 +30,13 @@ public static final String LOGIN_URL="http://10.0.2.2/dbvolly/login.php";
     public EditText editTextPassword;
     public String email;
     public String password;
+    SessionManagement sessionManagement;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        //sessionManagement = new SessionManagement(getApplicationContext());
         btnLogin = (Button)findViewById(R.id.btnLogin);
         btnSignUp = (Button)findViewById(R.id.btnSingup);
         btnLogin.setOnClickListener(this);

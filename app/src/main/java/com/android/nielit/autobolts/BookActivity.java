@@ -19,6 +19,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,6 +29,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -44,6 +46,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.zip.Inflater;
 
@@ -53,6 +56,8 @@ public class BookActivity extends AppCompatActivity
     GoogleMap mGoogleMap;
     Marker marker;
     LocationManager lm;
+    SessionManagement sessionManagement;
+    TextView txtEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +65,8 @@ public class BookActivity extends AppCompatActivity
         if (googleServiceAvailable()) {
             Toast.makeText(this, "Connected to Play Services", Toast.LENGTH_SHORT).show();
             setContentView(R.layout.activity_book);
+            txtEmail = (TextView)findViewById(R.id.txtLoginEmail);
+            //sessionManagement = new SessionManagement(getApplicationContext());
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
 
@@ -73,9 +80,17 @@ public class BookActivity extends AppCompatActivity
             navigationView.setNavigationItemSelectedListener(this);
             initMap();
             lm = (LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
+            /*sessionManagement.checkLogin();
+            HashMap<String, String> user = sessionManagement.getUserDetails();
+            String email = user.get(SessionManagement.KEY_EMAIL);
+            txtEmail.setText(Html.fromHtml(email));*/
 
         } else {
             setContentView(R.layout.activity_home);
+            /*sessionManagement.checkLogin();
+            HashMap<String, String> user = sessionManagement.getUserDetails();
+            String email = user.get(SessionManagement.KEY_EMAIL);
+            txtEmail.setText(Html.fromHtml(email));*/
         }
     }
 
@@ -158,7 +173,9 @@ public class BookActivity extends AppCompatActivity
             Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_signout) {
-
+            //sessionManagement.logoutUser();
+            Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.book_layout);
